@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static "css/demo1.css" %}">
+</head>
+<body>
+<div class="container" align="center">
+    <h1>CHALLAN INFORMATION ABOUT PEOPLES</h1>
+    {% if pas_list %}
+    <table>
+        <thead>
+        <th>SNo</th>
+        <th>Owner</th>
+        <th>Vehicle</th>
+        <th>Date</th>
+        <th>Amount</th>
+        </thead>
+        {% for pas in pas_list %}
+        <tr>
+            <td>{{pas.sno}}</td>
+            <td>{{pas.owner}}</td>
+            <td>{{pas.vehicle}}</td>
+            <td>{{pas.date}}</td>
+            <td>{{pas.amount}}</td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+    </table>
+</div>
+</body>
+</html>
